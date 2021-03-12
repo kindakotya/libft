@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gmayweat <gmayweat@42.fr>                  +#+  +:+       +#+         #
+#    By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/03 09:56:58 by gmayweat          #+#    #+#              #
-#    Updated: 2021/01/18 13:53:09 by gmayweat         ###   ########.fr        #
+#    Updated: 2021/02/25 23:13:45 by gmayweat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ SRCS = 						ft_memset.c\
 							ft_isalnum.c\
 							ft_isascii.c\
 							ft_isprint.c\
+							ft_isspace.c\
 							ft_toupper.c\
 							ft_memchr.c\
 							ft_memcmp.c\
@@ -45,16 +46,18 @@ SRCS = 						ft_memset.c\
 							ft_putchar_fd.c\
 							ft_putstr_fd.c\
 							ft_putendl_fd.c\
-							ft_putnbr_fd.c
+							ft_putnbr_fd.c\
+							ft_realloc.c
 
 OBJS = $(SRCS:.c=.o)
 
-OBJSPATH = $(addprefix obj/, $(OBJS))
+OBJSPATH = $(addprefix objs/, $(OBJS))
 
-OBJDIR = obj
+OBJDIR = objs
 
-vpath %.o obj
-vpath %.c src
+vpath %.o objs
+vpath %.c srcs
+vpath %.h ../includes
 
 .Phony: all $(NAME) clean fclean re
 
@@ -65,7 +68,7 @@ $(NAME): $(OBJDIR) $(OBJS)
 	ranlib $(NAME)
 
 %.o: %.c libft.h
-	gcc -Wall -Wextra -Werror -I. -o $(patsubst src/%, obj/%, $(patsubst %.c, %.o, $<)) -c $<
+	clang -g -Wall -Wextra -Werror -I../includes -o $(patsubst srcs/%, objs/%, $(patsubst %.c, %.o, $<)) -c $<
 
 $(OBJDIR):
 	mkdir $(OBJDIR)
