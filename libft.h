@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gmayweat <gmayweat@42.fr>                  +#+  +:+       +#+        */
+/*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 17:59:10 by gmayweat          #+#    #+#             */
-/*   Updated: 2020/12/25 10:49:37 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/03/31 19:09:24 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int		ft_isascii(int c);
 int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
+int		ft_isspace(int c);
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char *s);
 char	*ft_substr(const char *s, unsigned int start, size_t len);
@@ -51,5 +52,6 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-
+int		ft_max(int a, int b);
+int		ft_min(int a, int b);
 #endif
