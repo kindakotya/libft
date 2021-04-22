@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gmayweat <gmayweat@42.fr>                  +#+  +:+       +#+        */
+/*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/08 23:05:30 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/01/18 13:52:18 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/04/22 23:02:24 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@ char	*ft_strdup(const char *s)
 	char	*dup;
 	int		i;
 
-	dup = (s[0] != '\0') ? malloc(ft_strlen(s) + 1 * sizeof(char)) :
-	malloc(sizeof(char));
+	if (s[0] != '\0')
+		dup = malloc(ft_strlen(s) + 1 * sizeof(char));
+	else
+		dup = malloc(sizeof(char));
 	if (dup == NULL)
 		return (NULL);
 	i = 0;

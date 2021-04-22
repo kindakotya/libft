@@ -3,29 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gmayweat <gmayweat@42.fr>                  +#+  +:+       +#+        */
+/*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/09 12:05:19 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/01/18 13:52:18 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/04/22 23:03:44 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_srav(char c, const char *s)
+static int	ft_srav(char c, const char *s)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (s[i])
+	{
 		if (s[i] == c)
 			return (1);
 		else
 			++i;
+	}
 	return (0);
 }
 
-char			*ft_strtrim(const char *s1, const char *set)
+char	*ft_strtrim(const char *s1, const char *set)
 {
 	char	*s0;
 	size_t	i;

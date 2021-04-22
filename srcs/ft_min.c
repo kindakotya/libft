@@ -6,11 +6,11 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 18:57:10 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/03/31 19:10:24 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/04/22 23:01:01 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_min(int a, int b)
+int	ft_min(int a, int b)
 {
 	if (a < b)
 		return (b);

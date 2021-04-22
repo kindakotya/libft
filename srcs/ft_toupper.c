@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gmayweat <gmayweat@42.fr>                  +#+  +:+       +#+        */
+/*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 23:42:00 by gmayweat          #+#    #+#             */
-/*   Updated: 2020/12/25 10:49:19 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/04/22 22:59:06 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_toupper(int c)
+int	ft_toupper(int c)
 {
-	return ((c >= 'a' && c <= 'z') ? c - 32 : c);
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c);
 }

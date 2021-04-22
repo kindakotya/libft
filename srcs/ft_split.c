@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gmayweat <gmayweat@42.fr>                  +#+  +:+       +#+        */
+/*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/14 12:59:16 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/01/18 13:52:18 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/04/23 01:22:50 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static int	ft_findwords(const char *s, char c)
 {
-	int i;
-	int nwords;
+	int	i;
+	int	nwords;
 
 	i = 0;
 	nwords = 0;
@@ -46,7 +46,7 @@ static void	*ft_free(char **arr, int k)
 
 static void	ft_wordcpy(char *arr, const char *s, int tekp, int end)
 {
-	int l;
+	int	l;
 
 	l = 0;
 	while (tekp < end)
@@ -54,15 +54,12 @@ static void	ft_wordcpy(char *arr, const char *s, int tekp, int end)
 	arr[l] = '\0';
 }
 
-char		**ft_split(const char *s, char c)
+int	ft_love_norme(char **arr, const char *s, char c)
 {
 	int		i;
 	int		j;
 	int		k;
-	char	**arr;
 
-	if (!s || !(arr = malloc((ft_findwords(s, c) + 1) * sizeof(char*))))
-		return (NULL);
 	i = 0;
 	k = 0;
 	while (s[i])
@@ -72,13 +69,30 @@ char		**ft_split(const char *s, char c)
 			j = i;
 			while (s[i] != c && s[i])
 				++i;
-			if (!(arr[k++] = (char*)malloc((i - j + 1) * sizeof(char))))
-				return (ft_free(arr, k - 1));
+			arr[k++] = (char *)malloc((i - j + 1) * sizeof(char));
+			if (!arr[k - 1])
+				return (k - 1);
 			ft_wordcpy(arr[k - 1], s, j, i);
 		}
 		if (s[i])
 			++i;
 	}
 	arr[k] = NULL;
+	return (-1);
+}
+
+char	**ft_split(const char *s, char c)
+{
+	char	**arr;
+	int		meow;
+
+	if (!s)
+		return (NULL);
+	arr = malloc((ft_findwords(s, c) + 1) * sizeof(char *));
+	if (!arr)
+		return (NULL);
+	meow = ft_love_norme(arr, s, c);
+	if (meow != -1)
+		return (ft_free(arr, meow));
 	return (arr);
 }

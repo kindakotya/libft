@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gmayweat <gmayweat@42.fr>                  +#+  +:+       +#+        */
+/*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 17:47:26 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/01/18 13:52:18 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/04/22 22:40:20 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t len)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	if (len == 0 || src == dest)
@@ -22,15 +22,17 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 	if (dest > src && dest < src + len)
 	{
 		while (len--)
-			((unsigned char*)dest)[len] = ((unsigned char*)src)[len];
+			((unsigned char *)dest)[len] = ((unsigned char *)src)[len];
 		return (dest);
 	}
 	else
+	{
 		while (i++ < len)
 		{
-			*((unsigned char*)dest) = *((unsigned char*)src);
+			*((unsigned char *)dest) = *((unsigned char *)src);
 			++dest;
 			++src;
 		}
+	}
 	return (dest - len);
 }

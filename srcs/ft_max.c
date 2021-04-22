@@ -6,11 +6,11 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 18:52:28 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/03/31 18:55:18 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/04/22 23:00:48 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_max(int a, int b)
+int	ft_max(int a, int b)
 {
 	if (a < b)
 		return (b);

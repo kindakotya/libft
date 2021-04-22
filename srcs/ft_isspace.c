@@ -6,15 +6,12 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 21:06:36 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/02/24 21:15:29 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/04/22 22:58:13 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isspace(int c)
+int	ft_isspace(int c)
 {
-	if (c == '\f' || c == '\n' || c == ' '
-		|| c == '\r' || c == '\t' || c == '\v')
-		return (1);
-	else
-		return (0);
+	return (c == '\f' || c == '\n' || c == ' '
+		|| c == '\r' || c == '\t' || c == '\v');
 }

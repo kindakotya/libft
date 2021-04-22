@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gmayweat <gmayweat@42.fr>                  +#+  +:+       +#+        */
+/*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 23:42:10 by gmayweat          #+#    #+#             */
-/*   Updated: 2020/12/25 10:49:13 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/04/22 22:59:39 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_tolower(int c)
+int	ft_tolower(int c)
 {
-	return ((c >= 'A' && c <= 'Z') ? c + 32 : c);
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	return (c);
 }
