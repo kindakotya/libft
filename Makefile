@@ -6,7 +6,7 @@
 #    By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/03 09:56:58 by gmayweat          #+#    #+#              #
-#    Updated: 2021/03/31 19:09:42 by gmayweat         ###   ########.fr        #
+#    Updated: 2021/04/30 03:16:32 by gmayweat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,6 +50,8 @@ SRCS = 						ft_memset.c\
 							ft_realloc.c\
 							ft_min.c\
 							ft_max.c\
+							ft_min_arr.c\
+							ft_max_arr.c\
 
 OBJS = $(SRCS:.c=.o)
 
@@ -70,7 +72,7 @@ $(NAME): $(OBJDIR) $(OBJS)
 	ranlib $(NAME)
 
 %.o: %.c libft.h
-	clang -g -Wall -Wextra -Werror -I. -o $(patsubst srcs/%, objs/%, $(patsubst %.c, %.o, $<)) -c $<
+	clang -O3 -Wall -Wextra -Werror -I. -o $(patsubst srcs/%, objs/%, $(patsubst %.c, %.o, $<)) -c $<
 
 $(OBJDIR):
 	mkdir $(OBJDIR)

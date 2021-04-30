@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 17:59:10 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/03/31 19:09:24 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/04/30 01:10:39 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,6 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 int		ft_max(int a, int b);
 int		ft_min(int a, int b);
+double	ft_min_arr(double *arr, int size);
+double	ft_max_arr(double *arr, int size);
 #endif
