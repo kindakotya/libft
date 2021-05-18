@@ -6,24 +6,24 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 22:18:56 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/04/22 22:45:33 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/05/18 02:36:29 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void	*ft_realloc(char *s, size_t size)
+void	*ft_realloc(void *s, size_t size)
 {
-	char	*meow;
+	void	*meow;
 	size_t	i;
 
 	i = 0;
 	meow = malloc(size);
 	if (!meow)
 		return (NULL);
-	while (s[i])
+	while (((unsigned char *)s)[i])
 	{
-		meow[i] = s[i];
+		((unsigned char *)meow)[i] = ((unsigned char *)s)[i];
 		++i;
 	}
 	free(s);
